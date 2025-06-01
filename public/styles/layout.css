@@ -1,0 +1,51 @@
+body {
+    transition: padding 0.2s ease;
+}
+
+body.active {
+    padding: 0 0 0 300px;
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    transform: translate(-100%, 0);
+    transition: transform 0.2s ease;
+    scrollbar-width: none;
+}
+
+body.active .aside {
+    transform: none;
+}
+
+.search {
+    max-width: 300px;
+}
+
+.aside .accordion-item {
+    border: 0;
+}
+
+.aside .accordion-item {
+    border: none;
+    background: transparent;
+}
+
+.aside .accordion-button {
+    background: transparent;
+    box-shadow: none;
+    padding-left: 0;
+}
+
+.content {
+    min-height: calc(100vh - 77px);
+}
+
+@media (max-width: 767px) {
+    body.active {
+        padding: 0;
+    }
+}

@@ -1,0 +1,46 @@
+<aside class="aside bg-body-tertiary border-end py-3 overflow-auto">
+    <div class="container">
+        <ul class="mb-4 p-0 m-0">
+            <li><a class="fs-5 text-dark d-block pb-2 border-bottom" href="#">Главная</a></li>
+            <li><a class="fs-5 text-dark d-block pb-2 border-bottom" href="#">Топ 500 книг</a></li>
+            <li><a class="fs-5 text-dark d-block pb-2 border-bottom" href="#">Аудио книги</a></li>
+            <li><a class="fs-5 text-dark d-block pb-2 border-bottom" href="#">Электронные книги</a></li>
+        </ul>
+        <div>
+            <h3>Жанры</h3>
+            <div class="accordion" id="accordionExample">
+                <% genres.forEach(genre=> { %>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold fs-5" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#<%= genre.id %>" aria-expanded="false" aria-controls="<%= genre.id %>">
+                                <%= genre.title %>
+                            </button>
+                        </h4>
+                        <div id="<%= genre.id %>" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <% genre.subgenres.forEach((subgenre)=> { %>
+                                <div class="accordion-body p-2">
+                                    <h5 class="fs-6"><a class="text-black fw-semibold" href="/genre/<%= subgenre.id %>">
+                                            <%= subgenre.title %>
+                                        </a></h5>
+                                    <% if (subgenre.subgenres && subgenre.subgenres.length) { %>
+                                        <ul class="ps-2 m-0">
+                                            <% subgenre.subgenres.forEach((subsubgenre)=> { %>
+                                                <li>
+                                                    <a href="/genre/<%= subsubgenre.id %>" class="fs-6 text-light-emphasis">
+                                                        <%= subsubgenre.title %>
+                                                    </a>
+                                                </li>
+                                                <% }) %>
+                                        </ul>
+                                        <% } %>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+</aside>
