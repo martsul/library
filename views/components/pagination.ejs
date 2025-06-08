@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+    <ul class="pagination">
+        <li class="page-item" data-page="1"><i class="bi bi-skip-start page-link"></i></li>
+        <% pagination.pagination.forEach((p)=> { %>
+            <li class="page-item" data-page="<%= p.page %>"><span class="page-link <% if (p.active) { %>active<% } %>">
+                    <%= p.page %>
+                </span></li>
+            <% }) %>
+                <li class="page-item" data-page="<%= pagination.countPages %>"><i class="bi bi-skip-end page-link"></i>
+                </li>
+    </ul>
+</div>

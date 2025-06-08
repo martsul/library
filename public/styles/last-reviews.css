@@ -1,0 +1,65 @@
+.swiper-slide {
+    width: 100%;
+    max-width: 400px;
+}
+
+.review__card {
+    background: #ececec;
+    border: 1px solid #4c4c4c42;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 160px;
+    color: #212529;
+}
+
+.review__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.review__top-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review__owner {
+    font-weight: 700;
+}
+
+.review__review, .review__book, .review__created {
+  font-size: 13px;
+}
+
+.review__review {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.review__img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.review__img {
+  width: 100%;
+}
+
+.review__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,32 @@
+<div class="books__container">
+    <% if (books && books.length) { %>
+        <% books.forEach((book)=> { %>
+            <a href="/book/<%= book.id %>" class="card book__card">
+                <div class="book__info">
+                    <% if(book.long) { %>
+                        <div class="book__long">
+                            <%= book.long %>
+                        </div>
+                        <% } %>
+                            <% if(book.top) { %>
+                                <div class="book__top">ТОП Книга</div>
+                                <% } %>
+                                    <% if(book.age) { %>
+                                        <div class="book__age">
+                                            <%= book.age %>
+                                        </div>
+                                        <% } %>
+                </div>
+                <img src="<%= book.img %>" class="card-img-top" alt="img">
+                <div class="card-body bg-body-tertiary">
+                    <p class="card-text mb-1">
+                        <%= book.author %>
+                    </p>
+                    <h5 class="card-title">
+                        <%= book.title %>
+                    </h5>
+                </div>
+            </a>
+            <% }) %>
+                <% } %>
+</div>

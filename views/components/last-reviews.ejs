@@ -1,0 +1,31 @@
+<h2 class="mb-4">Последние комментарии</h2>
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <% latestReviews.forEach(review=> { %>
+            <a href="/book/<%= review.bookId %>" class="swiper-slide review__card">
+                <span class="review__top">
+                    <span class="review__top-text">
+                        <span class="review__owner">
+                            <%= review.ownerName %>
+                        </span>
+                        <span class="review__review">
+                            <%= review.review %>
+                        </span>
+                    </span>
+                    <span class="review__img-container">
+                        <img src="<%= review.Book.img %>" alt="cover" class="review__img">
+                    </span>
+                </span>
+                <span class="review__bottom">
+                    <span class="review__book">
+                        <%= review.Book.title %>
+                    </span>
+                    <span class="review__created">
+                        <%= (new Date(review.createdAt)).toLocaleString("ru-RU", { day: "2-digit" , month: "long" ,
+                            year: "numeric" , hour: "2-digit" , minute: "2-digit" , }) %>
+                    </span>
+                </span>
+            </a>
+            <% }) %>
+    </div>
+</div>

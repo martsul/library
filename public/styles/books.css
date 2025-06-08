@@ -1,0 +1,67 @@
+.books__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+}
+
+.books__card {
+    position: relative;
+}
+
+.book__info {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: flex;
+    max-width: calc(100% - 10px);
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+}
+
+.book__long,
+.book__top,
+.book__age {
+    color: #fff;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 0 10px 10px 0;
+    max-width: 100%;
+}
+
+.book__long {
+    background: #333;
+}
+
+.book__top {
+    background: #008000;
+}
+
+.book__age {
+    background: #fff;
+    color: #333;
+}
+
+@media (max-width: 1199px) {
+    .books__container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .books__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .books__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .books__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

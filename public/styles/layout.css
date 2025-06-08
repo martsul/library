@@ -15,6 +15,7 @@ body.active {
     transform: translate(-100%, 0);
     transition: transform 0.2s ease;
     scrollbar-width: none;
+    z-index: 1;
 }
 
 body.active .aside {
@@ -37,7 +38,7 @@ body.active .aside {
 .aside .accordion-button {
     background: transparent;
     box-shadow: none;
-    padding-left: 0;
+    padding: 12px 12px 12px 0;
 }
 
 .content {
