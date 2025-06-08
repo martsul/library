@@ -27,7 +27,7 @@ export class HomePageService extends PageService {
     protected async createLayout(body: string) {
         return await this.getLayout({
             body,
-            title: "Home",
+            title: "Главная",
             styles: [
                 this.swiperCss,
                 this.booksCss,

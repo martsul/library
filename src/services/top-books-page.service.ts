@@ -3,11 +3,11 @@ import { TopBooksPageData } from "../interfaces/top-books-page-data.interface";
 import { HomePageService } from "./home-page.service";
 import ejs from "ejs";
 
-export class TopBooksService extends HomePageService {
+export class TopBooksPageService extends HomePageService {
     protected async createLayout(body: string) {
         return await this.getLayout({
             body,
-            title: "Top Books",
+            title: "ТОП Книги",
             styles: [this.swiperCss, this.booksCss, this.lastReviewsCss],
             scripts: [this.swiperJS, "/scripts/top-books.js", this.lastReviewsJS],
         });

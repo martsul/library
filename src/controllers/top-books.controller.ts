@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { TopBooksService } from "../services/top-books.service";
+import { TopBooksPageService } from "../services/top-books-page.service";
 
 export const topBooksController = async (req: Request, res: Response) => {
     try {
-        const topBooksService = new TopBooksService(req.params.page);
+        const topBooksService = new TopBooksPageService(req.params.page);
         const page = await topBooksService.getPage();
         res.send(page);
     } catch (error) {

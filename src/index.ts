@@ -6,7 +6,6 @@ import { consoleSuccess } from "./helpers/console-success";
 import { dbInit } from "./db/db-init";
 import { apiRouter } from "./routers/api-router";
 import cookieParser from "cookie-parser";
-import { initBooks } from "../test/init-books";
 
 dotenv.config();
 
