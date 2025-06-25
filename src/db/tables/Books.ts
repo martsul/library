@@ -5,17 +5,23 @@ import { SubGenres } from "./Sub-genres";
 import { MicroGenres } from "./Micro-genres";
 
 export class Books extends Model {
-    declare id: number;
-    declare img: string;
-    declare long?: string;
-    declare top?: boolean;
-    declare age?: string;
-    declare author: string;
+    declare id: string;
+    declare externalId: string;
+    declare img?: string;
+    declare imgFormat: string;
+    declare long: string;
+    declare age: string;
     declare title: string;
-    declare genreId: number;
-    declare subGenreId: number;
-    declare microGenreId: number;
+    declare subtitle: string;
+    declare annotation: string;
+    declare authorId: string;
+    declare isbn: string;
+    declare writeYear: number;
+    declare publishingHouseId?: number;
     declare language: string;
+    declare format: "electronic" | "audio";
+    declare available: number;
+    declare rating: number;
 }
 
 Books.init(
